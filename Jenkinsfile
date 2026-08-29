@@ -19,7 +19,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t devops-flask-app .'
+                bat '"C:\\Users\\afree\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t devops-flask-app .'
             }
         }
     }
