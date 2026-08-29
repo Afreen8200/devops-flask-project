@@ -14,6 +14,7 @@ pipeline {
             steps {
                 bat '.venv\\Scripts\\python --version'
                 bat '.venv\\Scripts\\python -c "import flask; print(\'Flask installed successfully\')"'
+                bat '.venv\\Scripts\\python -m pytest'
             }
         }
 
