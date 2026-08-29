@@ -2,16 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+
+        stage('Setup') {
             steps {
-                checkout scm
+                bat 'python -m venv .venv'
+                bat '.venv\\Scripts\\python -m pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'python --version'
-                bat 'pip install -r requirements.txt'
+                bat '.venv\\Scripts\\python --version'
+                bat '.venv\\Scripts\\python -c "import flask; print(\'Flask installed successfully\')"'
             }
         }
 
